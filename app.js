@@ -23,14 +23,13 @@ app.get("/npi-result/:npi_string", async (req, res) => {
     try{
     await client.query(`SELECT * FROM npi_records.npi_records where npi = ${npi_string}`).then(
     data => {
-        console.log("HERE", data);
         npi_record = data.rows[0];
     }
 )} catch{
     console.log("problem")
 }
 
-    res.json({...npi_record})
+  return res.json({...npi_record})
 })
 
 app.listen(port, () => console.log(`Vytalize db listening on port ${port}!`));
