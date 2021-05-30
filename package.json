@@ -11,7 +11,9 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "pg": "^8.6.0",
+    "pg-promise": "^10.10.2"
   },
   "engines": {
     "node": ">=12 <13"
