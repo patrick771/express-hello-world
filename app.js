@@ -1,11 +1,13 @@
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 3001;
+var cors = require('cors')
 const {Client} = require('pg')
 const connectionString = 'postgres://admin1:y2699WmsN8ZfxGDhPpFrUKIfIg9fef2I@oregon-postgres.render.com/vytalize_npi_database?ssl=true';
 // pools will use environment variables
 // for connection information
 app.use(express.json());
+app.use(cors())
 
 const client = new Client({
     connectionString: connectionString
